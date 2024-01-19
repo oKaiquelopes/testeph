@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalize sua compra | QCY GTS®</title>
+    <link rel="stylesheet" href="finalizacao.css">
+    <link rel="shortcut icon" href="img/transferir.ico" type="image/x-icon">
+</head>
+<header>
+    <nav class="nav-bar">
+        <div class="nav-list">
+            <ul>
+                <li class="nav-item"><a href="index.html" class="nav-link">Cancelar</a></li>
+            </ul>
+        </div>
+        <div class="logo-header">
+            <img src="img/gts-noBg.png" alt="">
+        </div>
+        <div class="mobile-menu-icon">
+            <button onclick="menuShow()"><img class="icon" src="img/menu-abertoPreto.png" alt=""></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li class="nav-item"><a href="#" class="nav-link">FAQ</a></li>
+        </ul>    
+    </div>
+</header>
+<body>
+    <div class="checkout-container">
+        <div class="product-details">
+            <img src="img/gts-product-2_750x750.png" alt="Nome do Produto">
+            <div class="info">
+                <h2 class="titulo-product">Relógio QCY GTS®</h2>
+                <p class="desc-product">Descrição do produto e informações adicionais.</p>
+                <p class="cor-product">Cor: Preto</p>
+                <p class="preco-product">Preço: <span>R$ 279,90</span></p>
+            </div>
+        </div>
+
+        <div class="payment-options">
+            <h3 class="title-pagament">Opções de Pagamento</h3>
+            <label>
+                <input type="radio" name="payment" value="pix">
+                PIX (Aprovação Imediata)
+            </label>
+            <label>
+                <input type="radio" name="payment" value="credit-card">
+                Cartão de Crédito
+            </label>
+            <label>
+                <input type="radio" name="payment" value="debit-card">
+                Cartão de Débito
+            </label>
+            <label>
+                <input type="radio" name="payment" value="boleto">
+                Boleto Bancário
+            </label>
+            <button class="checkout-button">Finalizar Compra</button>
+        </div>
+    </div>
+    <script>
+        function menuShow() {
+    let menuMobile = document.querySelector('.mobile-menu');
+    if (menuMobile.classList.contains('open')) {
+        menuMobile.classList.remove('open');
+        document.querySelector('.icon').src = "img/menu-abertoPreto.png";
+    } else {
+        menuMobile.classList.add('open');
+        document.querySelector('.icon').src = "img/botao-fecharPreto.png";
+    }
+}
+
+function toggleDropdown() {
+    var dropdownContent = document.getElementById("myDropdown");
+    dropdownContent.classList.toggle("show");
+}
+  // Fechar o menu dropdown se o usuário clicar fora dele
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+};
+
+
+document.addEventListener('DOMContentLoaded', function () {
+        const paymentButton = document.querySelector('.checkout-button');
+        
+        paymentButton.addEventListener('click', function () {
+            const selectedPayment = document.querySelector('input[name="payment"]:checked');
+
+            if (selectedPayment) {
+                const paymentMethod = selectedPayment.value;
+                redirectToPaymentScreen(paymentMethod);
+            } else {
+                alert('Selecione uma opção de pagamento antes de finalizar a compra.');
+            }
+        });
+
+        function redirectToPaymentScreen(paymentMethod) {
+            let redirectUrl = '';
+
+            switch (paymentMethod) {
+                case 'pix':
+                    redirectUrl = 'checkout_pix.html';
+                    break;
+                case 'credit-card':
+                    redirectUrl = 'checkout_credit_card.html';
+                    break;
+                case 'debit-card':
+                    redirectUrl = 'checkout_debit_card.html';
+                    break;
+                case 'boleto':
+                    redirectUrl = 'checkout_boleto.html';
+                    break;
+                default:
+                    break;
+            }
+
+            if (redirectUrl !== '') {
+                window.location.href = redirectUrl;
+            }
+        }
+    });
+    </script>
+</body>
+</html>

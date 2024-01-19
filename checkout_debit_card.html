@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Cartão de Débito | QCY GTS®</title>
+    <link rel="stylesheet" href="finalizacao.css">
+</head>
+<header>
+    <nav class="nav-bar">
+        <div class="nav-list">
+            <ul>
+                <li class="nav-item"><a href="finalizacao.html" class="nav-link">Cancelar</a></li>
+            </ul>
+        </div>
+        <div class="logo-header">
+            <img src="img/gts-noBg.png" alt="">
+        </div>
+        <div class="mobile-menu-icon">
+            <button onclick="menuShow()"><img class="icon" src="img/menu-abertoPreto.png" alt=""></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li class="nav-item"><a href="#" class="nav-link">FAQ</a></li>
+        </ul>    
+    </div>
+</header>
+<body>
+    <div class="payment-container">
+        <h2 class="title-debito">Pagamento Cartão de Débito</h2>
+        <form>
+            <label for="card-name">Nome Completo:</label>
+            <input type="text" id="card-name" name="card-name" required>
+
+            <label for="card-cpf">CPF:</label>
+            <input type="text" id="card-cpf" name="card-cpf" required>
+            
+            <label for="card-number">Número do Cartão:</label>
+            <input type="text" id="card-number" name="card-number" required>
+
+            <label for="expiry-date">Data de Expiração:</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            <br>
+            <button type="submit" class="submit-button">Finalizar Pagamento</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Boleto Bancário | QCY GTS®</title>
+    <link rel="stylesheet" href="finalizacao.css">
+</head>
+<header>
+    <nav class="nav-bar">
+        <div class="nav-list">
+            <ul>
+                <li class="nav-item"><a href="finalizacao.html" class="nav-link">Cancelar</a></li>
+            </ul>
+        </div>
+        <div class="logo-header">
+            <img src="img/gts-noBg.png" alt="">
+        </div>
+        <div class="mobile-menu-icon">
+            <button onclick="menuShow()"><img class="icon" src="img/menu-abertoPreto.png" alt=""></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li class="nav-item"><a href="#" class="nav-link">FAQ</a></li>
+        </ul>    
+    </div>
+</header>
+<body>
+    <div class="payment-container">
+        <h2 class="title-debito">Pagamento Boleto Bancário</h2>
+        <p class="desc-pix-1">Um boleto bancário será gerado para o pagamento.</p>
+        <button class="generate-boleto-button">Gerar Boleto</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const generateBoletoButton = document.querySelector('.generate-boleto-button');
+
+        generateBoletoButton.addEventListener('click', function () {
+            alert('Função em construção. Por favor selecione outro método de pagamento.');
+        });
+    });
+    </script>
+</body>
+</html>
